@@ -1,4 +1,10 @@
-export const signup = (req, res) => {
+export const signup = async(req, res) => {
+   try {
+       const { firstName, lastName, userName, email,
+           password, confirmedPassword, gender } = req.body;
+   } catch (error) {
+    
+   }
     res.send("Signup route")
 };
 
