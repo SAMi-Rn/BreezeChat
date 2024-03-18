@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 
 import authRoutes from './routes/auth.routes.js';
 import msgRoutes from './routes/message.routes.js';
+import userRoutes from './routes/user.routes.js';
 import connect from "./db/connect.js";
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", msgRoutes);
+app.use("/api/users", userRoutes);
 
 app.get("/", (req, res) => {
     res.send("Server is ready");
