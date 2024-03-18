@@ -1,5 +1,25 @@
 import Conversation from "../models/conversation.model.js";
 import Message from "../models/message.model.js";
+
+export const getMessages = async (req, res) => {
+	try {
+		const { id: receiverId } = req.params;
+		const senderId = req.user._id;
+
+		const conversation = await Conversation.findOne({
+			members: { $all: [senderId, receiverId] },
+		}).populate("messages");
+
+		if (!conversation) {
+			return res.status(200).json({ messages: [] });
+		}
+
+		res.status(200).json(conversation.messages);
+	} catch (error) {
+		console.log("Error in getMessages controller: ", error.message);
+		res.status(500).json({ error: "Internal server error" });
+	}
+}
 export const sendMessage = async (req, res) => {
 	try {
 		const { message } = req.body;
@@ -7,12 +27,12 @@ export const sendMessage = async (req, res) => {
 		const senderId = req.user._id;
 
 		let conversation = await Conversation.findOne({
-			participants: { $all: [senderId, receiverId] },
+			members: { $all: [senderId, receiverId] },
 		});
 
 		if (!conversation) {
 			conversation = await Conversation.create({
-				participants: [senderId, receiverId],
+				members: [senderId, receiverId],
 			});
 		}
 
