@@ -1,6 +1,7 @@
 export default {
   plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
+    'postcss-nesting': {}, // Enable CSS nesting
+    tailwindcss: {}, // Keep Tailwind CSS configuration
+    autoprefixer: {}, // Automatically add vendor prefixes
   },
 }
