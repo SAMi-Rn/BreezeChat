@@ -26,11 +26,11 @@ const SignUp = () => {
                         <input type="password" name="password" required />
                         <label>Confirm Password</label>
                     </div>
-                    <a href="#" className="account-link">
-                        Already have an acount?
-                    </a>
                     <a href="#">
                         Sign Up
+                    </a>
+                    <a href="#" className="account-link">
+                        Already have an acount?
                     </a>
                 </form>
             </div>

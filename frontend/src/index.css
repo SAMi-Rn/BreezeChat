@@ -190,6 +190,19 @@
     }
 }
 
+:root {
+    /* Define a default background or leave it unset */
+    --background-design: url('2.gif');
+}
+
+@layer utilities {
+    .bg-dynamic {
+        background-image: var(--background-design);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
 .login-box .account-link {
     display: inline;
     text-align: left;
@@ -203,12 +216,14 @@
     position: static;
     width: auto;
     color: inherit;
+    font-size: small;
 }
 
 .login-box .account-link:hover {
     background: none;
     color: #03e9f4;
     box-shadow: none;
+    text-decoration: underline;
 }
 
 @layer utilities {

@@ -16,7 +16,7 @@ const Login = () => {
                     <a href="#">
                         Login
                     </a>
-                    <a href="#" className="text-sm hover:underline hover:text-blue-600 mt-2 inline-block account-link">
+                    <a href="#" className="account-link">
                         Don't have an account?
                     </a>
                 </form>
