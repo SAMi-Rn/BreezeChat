@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    /* background: linear-gradient(90deg, #7affba 20%, #ff6c6c 50%); */
-    /* background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; */
-}
 
 .login-box {
     z-index: 10;
@@ -23,7 +17,6 @@ body {
     border-radius: 10px;
 }
 
-/* Additional styles for login-box elements */
 .login-box h2 {
     margin: 0 0 30px;
     padding: 0;
@@ -184,7 +177,6 @@ body {
 
 .blur-effect {
     filter: blur(10px);
-    /* Adjust the blur radius as needed */
 }
 
 @layer utilities {
@@ -200,38 +192,23 @@ body {
 
 .login-box .account-link {
     display: inline;
-    /* Makes the link inline instead of block, removing automatic centering */
     text-align: left;
-    /* Ensures text alignment is left; might be redundant due to 'display: inline' */
     padding: 0;
-    /* Removes padding */
     margin-top: 0px;
-    /* Adjusts margin-top to remove the extra space */
     letter-spacing: normal;
-    /* Resets any letter-spacing if you don't want it */
     background: none;
-    /* Removes any background */
     border-radius: 0px;
-    /* Resets border-radius */
     box-shadow: none;
-    /* Removes box shadow */
     overflow: visible;
-    /* Resets overflow */
     position: static;
-    /* Ensures the link is not absolutely positioned */
     width: auto;
-    /* Ensures the width is automatic, based on content */
     color: inherit;
-    /* Makes the link inherit its color from parent, or set a specific color */
 }
 
 .login-box .account-link:hover {
     background: none;
-    /* Ensures no background on hover */
     color: #03e9f4;
-    /* Or any color you wish on hover */
     box-shadow: none;
-    /* Ensures no box shadow on hover */
 }
 
 @layer utilities {
@@ -244,4 +221,21 @@ body {
 
 
     }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1c1c1c;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #131313;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #242424;
 }

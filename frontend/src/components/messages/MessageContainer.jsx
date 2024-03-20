@@ -1,5 +1,6 @@
 
 import Messages from "./Messages"
+import MessageInput from "./MessageInput"
 
 const MessageContainer = () => {
     return (
@@ -10,6 +11,7 @@ const MessageContainer = () => {
                 </div>
 
                 <Messages />
+                <MessageInput />
             </>
         </div>
     )
