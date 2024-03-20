@@ -1,14 +1,16 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Navigate, Routes, Route, useLocation } from 'react-router-dom'
 import './App.css'
 import Home from './pages/home/Home.jsx'
 import Login from './pages/login/Login.jsx'
 import SignUp from './pages/signup/Signup.jsx'
 import { useEffect } from 'react'
-
+import { Toaster } from 'react-hot-toast'
+import { useAuthContext } from './context/AuthContext'
 
 
 function App() {
   const location = useLocation()
+  const { authUser } = useAuthContext()
 
   useEffect(() => {
     const changeBackground = () => {
@@ -38,10 +40,11 @@ function App() {
   return (
     <div className="bg-dynamic h-screen min-h-screen flex justify-center items-center">
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={authUser ? <Home /> : <Navigate to={"/login"} />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
       </Routes>
+      <Toaster />
     </div>
   )
 }

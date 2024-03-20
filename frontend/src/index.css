@@ -59,24 +59,25 @@
     font-size: 12px;
 }
 
-.login-box form a {
+.login-box form button {
     position: relative;
     display: block;
     text-align: center;
     padding: 10px 10px;
     color: #03e9f4;
     font-size: 16px;
-    text-decoration: none;
+    border: none;
+    background: transparent;
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
     margin-top: 10px;
     margin-bottom: 10px;
     letter-spacing: 4px;
-
+    cursor: pointer;
 }
 
-.login-box a:hover {
+.login-box button:hover {
     background: #03e9f4;
     color: #fff;
     border-radius: 5px;
@@ -86,13 +87,13 @@
         0 0 100px #B3E5FC;
 }
 
-.login-box a span {
+.login-box button span {
     position: absolute;
     display: block;
 
 }
 
-.login-box a span:nth-child(1) {
+.login-box button span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
