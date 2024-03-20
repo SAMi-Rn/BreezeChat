@@ -1,12 +1,12 @@
-import Sidebar from "../../components/sidebar/Sidebar.jsx"
+import MessageContainer from "../../components/sidebar/Sidebar"
+import Sidebar from "../../components/sidebar/Sidebar"
+
 const Home = () => {
     return (
-        <div className="flex items-center justify-center min-h-screen bg-blue-900 bg-opacity-25 backdrop-blur-3xl" >
-            <div className="login-box">
-                <Sidebar />
-                {/* <MessageContainer /> */}
-            </div>
-        </div >
+        <div className=' flex sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
+            <Sidebar />
+            {/* <MessageContainer /> */}
+        </div>
     )
 }
 export default Home;

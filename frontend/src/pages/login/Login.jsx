@@ -1,9 +1,9 @@
 import React from "react"
 const Login = () => {
     return (
-        <div className="flex items-center justify-center min-h-screen bg-blue-900 bg-opacity-25 backdrop-blur-3xl">
+        <div >
             <div className="login-box">
-                <h2>Login <span className="text-blue-300">BreezeChat</span></h2>
+                <h2 className="text-xl">Login <span className="text-2xl text-cyan-300 font-semibold">BreezeChat</span></h2>
                 <form>
                     <div className="user-box">
                         <input type="text" name="username" required />
@@ -16,7 +16,7 @@ const Login = () => {
                     <a href="#">
                         Login
                     </a>
-                    <a href="#" className="block text-start mt-2 text-sm text-cyan-50 hover:underline hover:text-blue-600">
+                    <a href="#" className="text-sm hover:underline hover:text-blue-600 mt-2 inline-block account-link">
                         Don't have an account?
                     </a>
                 </form>

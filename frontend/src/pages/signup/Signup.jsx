@@ -2,9 +2,9 @@
 const SignUp = () => {
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-blue-900 bg-opacity-25 backdrop-blur-3xl" >
+        <div>
             <div className="login-box">
-                <h2>Sign Up <span className="text-blue-300">BreezeChat</span></h2>
+                <h2 className="text-xl">Sign Up <span className="text-2xl text-cyan-300 font-semibold">BreezeChat</span></h2>
                 <form>
                     <div className="user-box">
                         <input type="text" name="First Name" required />
@@ -24,9 +24,9 @@ const SignUp = () => {
                     </div>
                     <div className="user-box">
                         <input type="password" name="password" required />
-                        <label>Confirmed Password</label>
+                        <label>Confirm Password</label>
                     </div>
-                    <a href="#" className="block text-start mt-2 text-sm text-cyan-50 hover:underline hover:text-blue-600">
+                    <a href="#" className="account-link">
                         Already have an acount?
                     </a>
                     <a href="#">

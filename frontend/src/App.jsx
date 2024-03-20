@@ -3,6 +3,7 @@ import Home from './pages/home/Home.jsx'
 import Login from './pages/login/Login.jsx'
 import SignUp from './pages/signup/Signup.jsx'
 
+
 import React, { useEffect, useRef, memo } from 'react' // Import memo from React
 
 const Doodle = memo(() => {
@@ -15,23 +16,11 @@ const Doodle = memo(() => {
           const script = document.createElement('script')
           script.src = "https://unpkg.com/css-doodle@latest"
           script.onload = () => {
-            insertDoodle()
-          }
-          document.head.appendChild(script)
-        } else {
-          insertDoodle()
-        }
-      }
-    }
+            const doodle = document.createElement('css-doodle')
 
-    const insertDoodle = () => {
-      doodleRef.current.innerHTML = ''
-      const doodle = document.createElement('css-doodle')
-      const gridSize = window.innerWidth > 1920 ? '1x1' : '20x2'
-
-      doodle.innerHTML = `
+            doodle.innerHTML = `
       :doodle {
-        @grid: 6x4 / 100vw 100vh;
+        @grid: 4x4 / 100vw 100vh;
       }
           --color: #a8daf9, #92d2f9, #cde2ee ;
           border-radius: 34%; 
@@ -56,8 +45,8 @@ const Doodle = memo(() => {
           );
          
           transform: translate3d(0, 0, 0);
-          animation: scale-up 60s linear infinite;
-          animation-delay: calc(-60s / @I * @i);
+          animation: scale-up 90s linear infinite;
+          animation-delay: calc(-90s / @I * @i);
           @keyframes scale-up {
             0%, 95.01%, 100% {
               transform: translateZ(0) rotate(0);
@@ -71,9 +60,12 @@ const Doodle = memo(() => {
             }
           }
         `
-      doodleRef.current.appendChild(doodle)
+            doodleRef.current.appendChild(doodle)
+          }
+          document.body.appendChild(script)
+        }
+      }
     }
-
     createDoodle()
   }, [])
 
@@ -82,8 +74,8 @@ const Doodle = memo(() => {
 
 function App() {
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <Doodle /> {/* Replace the <div ref={doodleRef} className="absolute top-0 left-0 w-full h-full"></div> with <Doodle /> */}
+    <div className="  bg-gif h-screen min-h-screen flex justify-center items-center">
+
       <Home />
     </div>
   )
