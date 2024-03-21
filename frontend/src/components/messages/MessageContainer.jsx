@@ -2,20 +2,30 @@
 import Messages from "./Messages"
 import MessageInput from "./MessageInput"
 import { FiMessageCircle } from "react-icons/fi"
+import useConversation from "../../store/useConversation"
+import { useEffect } from "react"
 
 const MessageContainer = () => {
-    const ChatSelected = false
+    const { selectedConversation, setSelectedConversation } = useConversation()
+
+    useEffect(() => {
+        return () => setSelectedConversation(null)
+    }, [setSelectedConversation])
+
     return (
         <div className='md:min-w-[450px] flex flex-col'>
-            {ChatSelected ? <>
-                <div className='bg-slate-600 px-4 py-2 mb-2'>
-                    <span className='label-text'></span> <span className='text-gray-900 font-bold'>Sami </span>
-                </div>
-
-                <Messages />
-                <MessageInput />
-            </> : <NoChatSelected />}
-
+            {!selectedConversation ? (
+                <NoChatSelected />
+            ) : (
+                <>
+                    <div className='bg-slate-600 px-4 py-2 mb-2'>
+                        <span className='label-text'>To:</span>{" "}
+                        <span className='text-gray-900 font-bold'>{selectedConversation.firstName}</span>
+                    </div>
+                    <Messages />
+                    <MessageInput />
+                </>
+            )}
         </div>
     )
 }
