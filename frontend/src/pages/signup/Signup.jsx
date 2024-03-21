@@ -72,8 +72,8 @@ const SignUp = () => {
                         <label>Confirm Password</label>
                     </div>
                     <div>
-                        <button className='btn btn-block btn-m mt-2 border' >
-                            Sign up
+                        <button className='btn btn-block btn-m mt-2 border' disabled={loading}>
+                            {loading ? <span className='loading loading-spinner'></span> : "Sign Up"}
                         </button>
                     </div>
                     <Link to="/login" className="account-link">

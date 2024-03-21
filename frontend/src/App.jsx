@@ -41,8 +41,8 @@ function App() {
     <div className="bg-dynamic h-screen min-h-screen flex justify-center items-center">
       <Routes>
         <Route path='/' element={authUser ? <Home /> : <Navigate to={"/login"} />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/signup' element={<SignUp />} />
+        <Route path='/login' element={authUser ? <Navigate to='/' /> : <Login />} />
+        <Route path='/signup' element={authUser ? <Navigate to='/' /> : <SignUp />} />
       </Routes>
       <Toaster />
     </div>
