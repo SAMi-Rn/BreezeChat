@@ -3,10 +3,11 @@ import LogoutButton from "./LogoutButton"
 import SearchInput from "./Search"
 const Sidebar = () => {
     return (
-        <div className='border-r border-slate-600 p-5 flex flex-col'>
+        <div className=' bg-neutral-900 border-r border-slate-900 p-9 flex flex-col'>
             <SearchInput />
-            <div className='divider px-3'></div>
+            <div className=' divider px-2'></div>
             <Conversations />
+
             <LogoutButton />
         </div>
     )

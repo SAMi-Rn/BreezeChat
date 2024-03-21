@@ -1,5 +1,5 @@
 import { BiLogOut } from "react-icons/bi"
-import useLogout from "../../hooks/useLogout"
+import useLogout from "../../helper/useLogout"
 
 const LogoutButton = () => {
     const { loading, logout } = useLogout()

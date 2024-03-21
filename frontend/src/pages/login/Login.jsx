@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
-import useLogin from "../../hooks/useLogin"
+import useLogin from "../../helper/useLogin"
 const Login = () => {
     const [userName, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -28,7 +28,7 @@ const Login = () => {
                     </div>
                     <div className="user-box">
                         <input
-                            type='text'
+                            type='password'
                             name="Username"
                             required
                             value={password}

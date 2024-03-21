@@ -38,14 +38,15 @@ function App() {
   }, [location])
 
   return (
-    <div className="bg-dynamic h-screen min-h-screen flex justify-center items-center">
-      <Routes>
+    <div className="bg-dynamic h-screen min-h-max flex justify-center items-center">
+      < Routes >
         <Route path='/' element={authUser ? <Home /> : <Navigate to={"/login"} />} />
-        <Route path='/login' element={authUser ? <Navigate to='/' /> : <Login />} />
-        <Route path='/signup' element={authUser ? <Navigate to='/' /> : <SignUp />} />
-      </Routes>
+        < Route path='/login' element={authUser ? <Navigate to='/' /> : <Login />
+        } />
+        < Route path='/signup' element={authUser ? <Navigate to='/' /> : <SignUp />} />
+      </Routes >
       <Toaster />
-    </div>
+    </div >
   )
 }
 

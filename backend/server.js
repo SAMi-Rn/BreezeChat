@@ -6,8 +6,8 @@ import authRoutes from './routes/auth.routes.js';
 import msgRoutes from './routes/message.routes.js';
 import userRoutes from './routes/user.routes.js';
 import connect from "./db/connect.js";
+import { app, server } from "./socket/socket.js";
 
-const app = express();
 const PORT = process.env.PORT || 5100
 
 dotenv.config();
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 
 
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     connect();
 	console.log(`Server Running on port ${PORT}`);
 });
