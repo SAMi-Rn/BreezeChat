@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", msgRoutes);
 app.use("/api/users", userRoutes);
-
+app.use('/uploads', express.static('uploads'));
 app.get("/", (req, res) => {
     res.send("Server is ready");
 });

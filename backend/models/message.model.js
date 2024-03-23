@@ -13,8 +13,15 @@ const messageSchema = new mongoose.Schema({
     },
     message: {
         type: String,
-        required: "Message is required",
-    }
+        required: function() {
+      // Message is required only if there are no attachments
+      return this.attachments.length === 0;
+    },
+    },
+     attachments: [{
+        type: String,
+        default: [],
+    }],
 }, { timestamps: true })
 
 const Message = mongoose.model("Message", messageSchema)
