@@ -20,9 +20,16 @@ const MessageContainer = () => {
                 <NoChatSelected />
             ) : (
                 <>
-                    <div className=' bg-neutral-900 px-4 py-2 mb-2'>
-                        <span className='text-neutral-300 font-bold'>{selectedConversation.firstName} {selectedConversation.lastName} {getEmoji()}</span>
+                    <div className='bg-neutral-900 px-4 py-2 mb-2 flex items-center gap-2'>
+                        <div className='w-10 h-10 rounded-full overflow-hidden'>
+                            <img src={selectedConversation.profilePicture} alt="" className="w-full h-full object-cover" />
+                        </div>
+                        <span className='text-neutral-300 font-bold'>
+                            {selectedConversation.firstName} {selectedConversation.lastName}
+                        </span>
+                        {getEmoji()}
                     </div>
+
                     <Messages />
                     <MessageInput />
                 </>

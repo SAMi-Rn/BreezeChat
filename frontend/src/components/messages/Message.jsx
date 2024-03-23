@@ -2,6 +2,8 @@ import { useAuthContext } from "../../context/AuthContext"
 import { time } from "../../utils/time"
 import useConversation from "../../store/useConversation"
 import React, { useState } from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDownload } from '@fortawesome/free-solid-svg-icons'
 
 function Message({ message }) {
     const { authUser } = useAuthContext()
@@ -63,8 +65,8 @@ function Message({ message }) {
                         )
                     } else {
                         return (
-                            <a key={index} href={getAttachmentUrl(attachment)} download>
-                                Download Attachment
+                            <a key={index} href={getAttachmentUrl(attachment)} download className="download-link">
+                                <FontAwesomeIcon icon={faDownload} /> Download Attachment
                             </a>
                         )
                     }
