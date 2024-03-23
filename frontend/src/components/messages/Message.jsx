@@ -15,10 +15,17 @@ function Message({ message }) {
 
     const animation = message.anime ? "anim" : ""
 
-    const isImage = (filename) => {
-        return /\.(jpg|jpeg|png|gif)$/i.test(filename)
+    const getFileExtension = (filename) => {
+        return filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2)
     }
 
+    const isImage = (filename) => {
+        return ['jpg', 'jpeg', 'png', 'gif'].includes(getFileExtension(filename).toLowerCase())
+    }
+
+    const isMp3 = (filename) => {
+        return getFileExtension(filename).toLowerCase() === 'mp3'
+    }
     const getAttachmentUrl = (attachmentPath) => {
         return `http://localhost:5100/${attachmentPath}`
     }
@@ -39,18 +46,29 @@ function Message({ message }) {
                 </div>
             </div>
             <div>
-                {message.attachments && message.attachments.map((attachment, index) => (
-                    isImage(attachment) ? (
-                        <div key={index} className="attachment" onClick={() =>
-                            setViewImage(getAttachmentUrl(attachment))}>
-                            <img src={getAttachmentUrl(attachment)} alt={`Attachment ${index}`} className="attachment-image" />
-                        </div>
-                    ) : (
-                        <a key={index} href={getAttachmentUrl(attachment)} download>
-                            Download Attachment
-                        </a>
-                    )
-                ))}
+                {message.attachments && message.attachments.map((attachment, index) => {
+                    const fileExtension = getFileExtension(attachment)
+                    if (isImage(attachment)) {
+                        return (
+                            <div key={index} className="attachment" onClick={() => setViewImage(getAttachmentUrl(attachment))}>
+                                <img src={getAttachmentUrl(attachment)} alt={`Attachment ${index}`} className="attachment-image" />
+                            </div>
+                        )
+                    } else if (isMp3(attachment)) {
+                        return (
+                            <audio key={index} controls className="audio-player">
+                                <source src={getAttachmentUrl(attachment)} type="audio/mp3" />
+                                Your browser does not support the audio element.
+                            </audio>
+                        )
+                    } else {
+                        return (
+                            <a key={index} href={getAttachmentUrl(attachment)} download>
+                                Download Attachment
+                            </a>
+                        )
+                    }
+                })}
                 {message.message && (
                     <div className={`chat-bubble text-white ${inputColor} ${animation} pb-2`}>
                         {message.message}
