@@ -31,7 +31,12 @@ function Message({ message }) {
     const getAttachmentUrl = (attachmentPath) => {
         return `http://localhost:5100/${attachmentPath}`
     }
+    const [enlargedContent, setEnlargedContent] = useState({ imageUrl: null, username: '' })
 
+    const handleAvatarClick = () => {
+        // Set both the image URL and the username for the enlarged view
+        setEnlargedContent({ imageUrl: pic, username: sender ? authUser.userName : selectedConversation.userName })
+    }
     const toggleViewImage = (attachment) => {
         if (viewImage === attachment) {
             setViewImage(null) // If the same image is clicked again, close the view
@@ -42,9 +47,13 @@ function Message({ message }) {
 
     return (
         <div className={`chat ${chatStatus}`}>
-            <div className='chat-image avatar'>
+            <div
+                className='chat-image avatar'
+                onClick={handleAvatarClick}
+                style={{ cursor: 'pointer' }} // Make the cursor change to a pointer on hover
+            >
                 <div className='w-11 rounded-full'>
-                    <img src={pic} />
+                    <img src={pic} alt="User avatar" />
                 </div>
             </div>
             <div>
@@ -80,6 +89,14 @@ function Message({ message }) {
                 {viewImage && (
                     <div className="image-overlay" onClick={() => setViewImage(null)}>
                         <img src={viewImage} alt="Enlarged" className="enlarged-image" />
+                    </div>
+                )}
+                {enlargedContent.imageUrl && (
+                    <div className="image-overlay" onClick={() => setEnlargedContent({ imageUrl: null, username: '' })}>
+                        <div className="enlarged-image-container">
+                            <img src={enlargedContent.imageUrl} alt="Enlarged" className="enlarged-image" />
+                            <div className="username-label">{enlargedContent.username}</div>
+                        </div>
                     </div>
                 )}
             </div>

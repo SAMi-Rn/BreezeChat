@@ -371,8 +371,8 @@
 }
 
 .enlarged-image {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 70%;
+    max-height: 70%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -467,4 +467,59 @@
     background-color: #f44336;
     /* Red */
     color: white;
+}
+
+.date-label {
+    position: -webkit-sticky;
+
+    position: sticky;
+    top: 0;
+    background: rgba(0, 0, 0, 0.23);
+    color: white;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+    z-index: 10;
+    text-align: center;
+    box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.392);
+    max-width: 130px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 9%;
+}
+
+.enlarged-image-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.username-label {
+    display: block;
+    /* or inline-block, depending on your layout */
+    margin-top: 20px;
+    /* Spacing between the image and the username */
+    color: #fff;
+    /* White color for the text */
+    font-size: 2em;
+    /* Adjust as needed */
+    text-align: center;
+    text-shadow:
+        0 0 5px #B3E5FC,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 100px #B3E5FC;
+    /* Creating the 3D effect */
+    /* You can continue to add more layers to the shadow if needed for a deeper effect */
 }
