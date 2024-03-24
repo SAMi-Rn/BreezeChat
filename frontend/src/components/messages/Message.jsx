@@ -66,7 +66,7 @@ function Message({ message }) {
                     } else {
                         return (
                             <a key={index} href={getAttachmentUrl(attachment)} download className="download-link">
-                                <FontAwesomeIcon icon={faDownload} /> Download Attachment
+                                <FontAwesomeIcon icon={faDownload} />Download the {fileExtension} file
                             </a>
                         )
                     }

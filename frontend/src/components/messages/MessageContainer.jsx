@@ -20,7 +20,7 @@ const MessageContainer = () => {
                 <NoChatSelected />
             ) : (
                 <>
-                    <div className='bg-neutral-900 px-4 py-2 mb-2 flex items-center gap-2'>
+                    <div className='bg-neutral-900 px-4 py-2 mb-2 flex items-center gap-2' style={{ backgroundColor: 'rgba(26, 32, 44, 0.5)' }}>
                         <div className='w-10 h-10 rounded-full overflow-hidden'>
                             <img src={selectedConversation.profilePicture} alt="" className="w-full h-full object-cover" />
                         </div>

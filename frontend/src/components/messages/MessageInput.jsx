@@ -73,7 +73,7 @@ const MessageInput = () => {
                 </div>
                 <div className='input-container relative w-full'>
                     <textarea
-                        className='resize-none border text-sm rounded-lg block w-full p-2 bg-neutral-800 border-gray-800 text-white pl-9 pr-8'
+                        className='resize-none border text-sm rounded-lg block w-full p-2  border-gray-600 text-white pl-9 pr-8 ' style={{ backgroundColor: 'rgba(26, 32, 44, 0.3)' }}
                         placeholder='Send a message'
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
