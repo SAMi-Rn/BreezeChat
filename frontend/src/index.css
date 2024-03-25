@@ -404,7 +404,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.645);
+    background: rgba(0, 0, 0, 0.844);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -439,7 +439,7 @@
     width: 100%;
     padding: 10px;
     border-radius: 4px;
-    background-color: #012f2c9c;
+    background-color: rgba(0, 255, 221, 0.037);
     border: 1px solid #ccc;
 }
 
@@ -458,9 +458,20 @@
 }
 
 .update-btn {
-    background-color: #4CAF50;
+    background-color: #53fcff6b;
     /* Green */
     color: white;
+}
+
+.update-btn:hover {
+    background: #00c7d2;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #B3E5FC,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 100px #B3E5FC;
+
 }
 
 .close-btn {

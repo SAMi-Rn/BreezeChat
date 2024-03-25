@@ -15,11 +15,13 @@ const Messages = () => {
     }
 
     useEffect(() => {
-        scrollToBottom()
+        setTimeout(() => scrollToBottom(), 100)
     }, [messages])
 
-    // Group messages by date
     const groupMessagesByDate = (messages) => {
+        if (!Array.isArray(messages) || messages.length === 0) {
+            return {}
+        }
         return messages.reduce((groups, message) => {
             const date = new Date(message.createdAt)
             const dateKey = isToday(date) ? 'Today' : isYesterday(date) ? 'Yesterday' : format(date, 'PP')
