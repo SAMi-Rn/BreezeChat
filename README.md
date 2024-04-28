@@ -27,7 +27,11 @@ BreezeChat is a state-of-the-art, real-time chatting application designed to ele
 - Real-time Engine: socket.io
 
 ## Getting Started
+Clone the repository to get started:
 
+```sh
+git clone https://github.com/SAMi-Rn/BreezeChat.git
+```
 To get BreezeChat up and running on your local machine, follow these steps:
 
 ### Prerequisites
