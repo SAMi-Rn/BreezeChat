@@ -69,7 +69,7 @@ npm run dev
 ```
 ## Running the Application
 ```sh
-http://localhost:3500
+http://localhost:3000
 ```
 You will be greeted with the login screen of BreezeChat. Proceed with your credentials or sign up to start chatting!
 
