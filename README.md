@@ -78,4 +78,3 @@ You will be greeted with the login screen of BreezeChat. Proceed with your crede
 - Passwords are hashed for additional security.
 ## Customization
 BreezeChat allows users to personalize their chat experience with customizable profiles and settings.
-
